@@ -42,6 +42,7 @@ export class PinScreen extends Component {
                     ReactNativeBiometrics.simplePrompt({ promptMessage: "Войти в приложение"})
                     .then((res) => {
                         this.setState({biometricsCancelled: true});
+                        this.props.navigation.navigate("Home")
                     })
                     .catch((err) => {
                         showMessage({
